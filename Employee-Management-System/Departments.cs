@@ -95,5 +95,31 @@ namespace Employee_Management_System
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DepNameTb.Text == "")
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    string Dep = DepNameTb.Text;
+                    string Query = "Delete from DepartmentTbl where DepId = {0}";
+                    Query = string.Format(Query,Key);
+                    Con.SetData(Query);
+                    ShowDepartmentList();
+                    MessageBox.Show("Department Deleted");
+                    DepNameTb.Text = "";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
