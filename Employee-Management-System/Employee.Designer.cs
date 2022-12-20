@@ -56,10 +56,10 @@ namespace Employee_Management_System
             this.JDateTb = new System.Windows.Forms.DateTimePicker();
             this.Addbtn = new System.Windows.Forms.Button();
             this.EditBtn = new System.Windows.Forms.Button();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.EmployeeLbl = new System.Windows.Forms.Label();
+            this.DepartmentLbl = new System.Windows.Forms.Label();
+            this.SalaryLbl = new System.Windows.Forms.Label();
+            this.LogoutLbl = new System.Windows.Forms.Label();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -323,49 +323,52 @@ namespace Employee_Management_System
             this.EditBtn.UseVisualStyleBackColor = false;
             this.EditBtn.Click += new System.EventHandler(this.EditBtn_Click);
             // 
-            // label15
+            // EmployeeLbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.Teal;
-            this.label15.Location = new System.Drawing.Point(479, 143);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(137, 29);
-            this.label15.TabIndex = 4;
-            this.label15.Text = "Employee ";
+            this.EmployeeLbl.AutoSize = true;
+            this.EmployeeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.EmployeeLbl.ForeColor = System.Drawing.Color.Teal;
+            this.EmployeeLbl.Location = new System.Drawing.Point(479, 143);
+            this.EmployeeLbl.Name = "EmployeeLbl";
+            this.EmployeeLbl.Size = new System.Drawing.Size(137, 29);
+            this.EmployeeLbl.TabIndex = 4;
+            this.EmployeeLbl.Text = "Employee ";
             // 
-            // label16
+            // DepartmentLbl
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.Teal;
-            this.label16.Location = new System.Drawing.Point(737, 143);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(148, 29);
-            this.label16.TabIndex = 4;
-            this.label16.Text = "Department";
+            this.DepartmentLbl.AutoSize = true;
+            this.DepartmentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.DepartmentLbl.ForeColor = System.Drawing.Color.Teal;
+            this.DepartmentLbl.Location = new System.Drawing.Point(737, 143);
+            this.DepartmentLbl.Name = "DepartmentLbl";
+            this.DepartmentLbl.Size = new System.Drawing.Size(148, 29);
+            this.DepartmentLbl.TabIndex = 4;
+            this.DepartmentLbl.Text = "Department";
+            this.DepartmentLbl.Click += new System.EventHandler(this.DepartmentLbl_Click);
             // 
-            // label17
+            // SalaryLbl
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.Teal;
-            this.label17.Location = new System.Drawing.Point(1008, 143);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(86, 29);
-            this.label17.TabIndex = 4;
-            this.label17.Text = "Salary";
+            this.SalaryLbl.AutoSize = true;
+            this.SalaryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.SalaryLbl.ForeColor = System.Drawing.Color.Teal;
+            this.SalaryLbl.Location = new System.Drawing.Point(1008, 143);
+            this.SalaryLbl.Name = "SalaryLbl";
+            this.SalaryLbl.Size = new System.Drawing.Size(86, 29);
+            this.SalaryLbl.TabIndex = 4;
+            this.SalaryLbl.Text = "Salary";
+            this.SalaryLbl.Click += new System.EventHandler(this.SalaryLbl_Click);
             // 
-            // label18
+            // LogoutLbl
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label18.ForeColor = System.Drawing.Color.Teal;
-            this.label18.Location = new System.Drawing.Point(1264, 143);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 29);
-            this.label18.TabIndex = 4;
-            this.label18.Text = "Logout";
+            this.LogoutLbl.AutoSize = true;
+            this.LogoutLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.LogoutLbl.ForeColor = System.Drawing.Color.Teal;
+            this.LogoutLbl.Location = new System.Drawing.Point(1217, 143);
+            this.LogoutLbl.Name = "LogoutLbl";
+            this.LogoutLbl.Size = new System.Drawing.Size(93, 29);
+            this.LogoutLbl.TabIndex = 4;
+            this.LogoutLbl.Text = "Logout";
+            this.LogoutLbl.Click += new System.EventHandler(this.LogoutLbl_Click);
             // 
             // pictureBox5
             // 
@@ -380,7 +383,7 @@ namespace Employee_Management_System
             // pictureBox4
             // 
             this.pictureBox4.Image = global::Employee_Management_System.Properties.Resources.logout_rounded_100;
-            this.pictureBox4.Location = new System.Drawing.Point(1158, 133);
+            this.pictureBox4.Location = new System.Drawing.Point(1111, 133);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 50);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -528,11 +531,11 @@ namespace Employee_Management_System
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.EmpNameTb);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.LogoutLbl);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.SalaryLbl);
+            this.Controls.Add(this.DepartmentLbl);
+            this.Controls.Add(this.EmployeeLbl);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -579,12 +582,12 @@ namespace Employee_Management_System
         private System.Windows.Forms.Button Addbtn;
         private System.Windows.Forms.Button EditBtn;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label EmployeeLbl;
+        private System.Windows.Forms.Label DepartmentLbl;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label SalaryLbl;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label LogoutLbl;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.Label label19;

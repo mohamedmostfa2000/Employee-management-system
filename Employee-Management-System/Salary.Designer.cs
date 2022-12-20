@@ -29,9 +29,9 @@ namespace Employee_Management_System
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.PeriodTb = new System.Windows.Forms.DateTimePicker();
             this.EmpCb = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -44,11 +44,11 @@ namespace Employee_Management_System
             this.label6 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
+            this.LogoutLbl = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
+            this.SalaryLbl = new System.Windows.Forms.Label();
+            this.DepartmentLbl = new System.Windows.Forms.Label();
+            this.EmployeeLbl = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -191,16 +191,17 @@ namespace Employee_Management_System
             this.label14.Size = new System.Drawing.Size(0, 32);
             this.label14.TabIndex = 38;
             // 
-            // label18
+            // LogoutLbl
             // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label18.ForeColor = System.Drawing.Color.Teal;
-            this.label18.Location = new System.Drawing.Point(1143, 143);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(93, 29);
-            this.label18.TabIndex = 29;
-            this.label18.Text = "Logout";
+            this.LogoutLbl.AutoSize = true;
+            this.LogoutLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.LogoutLbl.ForeColor = System.Drawing.Color.Teal;
+            this.LogoutLbl.Location = new System.Drawing.Point(1143, 143);
+            this.LogoutLbl.Name = "LogoutLbl";
+            this.LogoutLbl.Size = new System.Drawing.Size(93, 29);
+            this.LogoutLbl.TabIndex = 29;
+            this.LogoutLbl.Text = "Logout";
+            this.LogoutLbl.Click += new System.EventHandler(this.LogoutLbl_Click);
             // 
             // label3
             // 
@@ -211,38 +212,40 @@ namespace Employee_Management_System
             this.label3.Size = new System.Drawing.Size(0, 32);
             this.label3.TabIndex = 30;
             // 
-            // label17
+            // SalaryLbl
             // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label17.ForeColor = System.Drawing.Color.Teal;
-            this.label17.Location = new System.Drawing.Point(926, 143);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(86, 29);
-            this.label17.TabIndex = 28;
-            this.label17.Text = "Salary";
+            this.SalaryLbl.AutoSize = true;
+            this.SalaryLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.SalaryLbl.ForeColor = System.Drawing.Color.Teal;
+            this.SalaryLbl.Location = new System.Drawing.Point(926, 143);
+            this.SalaryLbl.Name = "SalaryLbl";
+            this.SalaryLbl.Size = new System.Drawing.Size(86, 29);
+            this.SalaryLbl.TabIndex = 28;
+            this.SalaryLbl.Text = "Salary";
             // 
-            // label16
+            // DepartmentLbl
             // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label16.ForeColor = System.Drawing.Color.Teal;
-            this.label16.Location = new System.Drawing.Point(655, 143);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(148, 29);
-            this.label16.TabIndex = 27;
-            this.label16.Text = "Department";
+            this.DepartmentLbl.AutoSize = true;
+            this.DepartmentLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.DepartmentLbl.ForeColor = System.Drawing.Color.Teal;
+            this.DepartmentLbl.Location = new System.Drawing.Point(655, 143);
+            this.DepartmentLbl.Name = "DepartmentLbl";
+            this.DepartmentLbl.Size = new System.Drawing.Size(148, 29);
+            this.DepartmentLbl.TabIndex = 27;
+            this.DepartmentLbl.Text = "Department";
+            this.DepartmentLbl.Click += new System.EventHandler(this.DepartmentLbl_Click);
             // 
-            // label15
+            // EmployeeLbl
             // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
-            this.label15.ForeColor = System.Drawing.Color.Teal;
-            this.label15.Location = new System.Drawing.Point(405, 143);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(137, 29);
-            this.label15.TabIndex = 26;
-            this.label15.Text = "Employee ";
+            this.EmployeeLbl.AutoSize = true;
+            this.EmployeeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.2F, System.Drawing.FontStyle.Bold);
+            this.EmployeeLbl.ForeColor = System.Drawing.Color.Teal;
+            this.EmployeeLbl.Location = new System.Drawing.Point(405, 143);
+            this.EmployeeLbl.Name = "EmployeeLbl";
+            this.EmployeeLbl.Size = new System.Drawing.Size(137, 29);
+            this.EmployeeLbl.TabIndex = 26;
+            this.EmployeeLbl.Text = "Employee ";
+            this.EmployeeLbl.Click += new System.EventHandler(this.EmployeeLbl_Click);
             // 
             // label4
             // 
@@ -373,26 +376,26 @@ namespace Employee_Management_System
             // 
             // SalaryList
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.SalaryList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.SalaryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.SalaryList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.SalaryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.SalaryList.ColumnHeadersHeight = 24;
             this.SalaryList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.SalaryList.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.SalaryList.DefaultCellStyle = dataGridViewCellStyle12;
             this.SalaryList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.SalaryList.Location = new System.Drawing.Point(448, 349);
             this.SalaryList.Name = "SalaryList";
@@ -464,11 +467,11 @@ namespace Employee_Management_System
             this.Controls.Add(this.label14);
             this.Controls.Add(this.SalaryTb);
             this.Controls.Add(this.DaysTb);
-            this.Controls.Add(this.label18);
+            this.Controls.Add(this.LogoutLbl);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label17);
-            this.Controls.Add(this.label16);
-            this.Controls.Add(this.label15);
+            this.Controls.Add(this.SalaryLbl);
+            this.Controls.Add(this.DepartmentLbl);
+            this.Controls.Add(this.EmployeeLbl);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
@@ -507,11 +510,11 @@ namespace Employee_Management_System
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label LogoutLbl;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label SalaryLbl;
+        private System.Windows.Forms.Label DepartmentLbl;
+        private System.Windows.Forms.Label EmployeeLbl;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;

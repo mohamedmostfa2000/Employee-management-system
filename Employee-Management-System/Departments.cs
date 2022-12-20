@@ -121,5 +121,26 @@ namespace Employee_Management_System
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void EmployeeLbl_Click(object sender, EventArgs e)
+        {
+            Employee Obj = new Employee();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void SalaryLbl_Click(object sender, EventArgs e)
+        {
+            Salary Obj =new Salary();
+            Obj.Show();
+            this.Hide();
+        }
+
+        private void LogoutLbl_Click(object sender, EventArgs e)
+        {
+            Login Obj = new Login();
+            Obj.Show();
+            this.Hide();
+        }
     }
 }
