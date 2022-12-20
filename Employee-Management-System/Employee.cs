@@ -129,5 +129,34 @@ namespace Employee_Management_System
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        private void DeleteBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Key == 0)
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                   
+                    string Query = "Delete from EmployeeTbl where EmpId ={0}";
+                    Query = string.Format(Query,Key);
+                    Con.SetData(Query);
+                    ShowEmpList();
+                    MessageBox.Show("Employee Deleted");
+                    EmpNameTb.Text = "";
+                    DailySalTb.Text = "";
+                    GenCb.SelectedIndex = -1;
+                    DepCb.SelectedIndex = -1;
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
