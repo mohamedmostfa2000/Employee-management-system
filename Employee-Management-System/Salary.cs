@@ -64,5 +64,36 @@ namespace Employee_Management_System
         {
             GetSalary();
         }
+        string Period = "";
+        private void AddBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DaysTb.Text == "" || PeriodTb.Text == "" || EmpCb.SelectedIndex == -1 )
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    Period = PeriodTb.Value.Date.Month.ToString() + "_" + PeriodTb.Value.Date.Year.ToString();
+                    int Amount = DSal * Convert.ToInt32(DaysTb.Text);
+                    int Days = Convert.ToInt32(DaysTb.Text);
+
+                    string Query = "insert into SalaryTbl values({0},{1},'{2}',{3},'{4}')";
+                    Query = string.Format(Query, EmpCb.SelectedValue.ToString(), Days, Period, Amount, DateTime.Today.Date);
+                    Con.SetData(Query);
+                    ShowSalaryList();
+                    MessageBox.Show("Salary Paid");
+                    DaysTb.Text = "";
+                   
+                    
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
