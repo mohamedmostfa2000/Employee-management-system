@@ -69,5 +69,31 @@ namespace Employee_Management_System
                 Key = Convert.ToInt32(DepList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DepNameTb.Text == "")
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    string Dep = DepNameTb.Text;
+                    string Query = "Update DepartmentTbl set DepName = '{0}' where DepId = {1}";
+                    Query = string.Format(Query, DepNameTb.Text,Key);
+                    Con.SetData(Query);
+                    ShowDepartmentList();
+                    MessageBox.Show("Department Updated");
+                    DepNameTb.Text = "";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
