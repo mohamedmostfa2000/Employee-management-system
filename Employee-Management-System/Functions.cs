@@ -24,5 +24,20 @@ namespace Employee_Management_System
             Cmd.Connection = Con;
         }
 
+        public DataTable GetData(String Query)
+        {
+            try
+            {
+                dt = new DataTable();
+                sda = new SqlDataAdapter(Query, Con);
+                sda.Fill(dt);
+                return dt;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+                return null;
+            }
+        }
     }
 }
