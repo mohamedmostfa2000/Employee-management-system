@@ -12,14 +12,20 @@ namespace Employee_Management_System
 {
     public partial class Salary : Form
     {
+        Functions Con;
         public Salary()
         {
             InitializeComponent();
+            Con = new Functions();
+            ShowSalaryList();
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void ShowSalaryList()
         {
-
+            string Query = "Select * from SalaryTbl";
+            SalaryList.DataSource = Con.GetData(Query);
         }
+
+
     }
 }
