@@ -42,5 +42,40 @@ namespace Employee_Management_System
         {
 
         }
+
+        private void Addbtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EmpNameTb.Text == "" || DailySalTb.Text == "" || GenCb.SelectedIndex == -1 || DepCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    string Name = EmpNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    int Dep = Convert.ToInt32(DepCb.SelectedValue.ToString());
+                    string DOB = DOBTb.Value.Date.ToString();
+                    string JDate = JDateTb.Value.Date.ToString();
+                    int Salary = Convert.ToInt32(DailySalTb.Text);
+
+                    string Query = "insert into EmployeeTbl values('{0}','{1}',{2},'{3}','{4}',{5})";
+                    Query = string.Format(Query,Name,Gender,Dep,DOB,JDate,Salary);
+                    Con.SetData(Query);
+                    ShowEmpList();
+                    MessageBox.Show("Employee Added");
+                    EmpNameTb.Text = "";
+                    DailySalTb.Text = "";
+                    GenCb.SelectedIndex = -1;
+                    DepCb.SelectedIndex = -1;
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
