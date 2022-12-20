@@ -19,6 +19,7 @@ namespace Employee_Management_System
             InitializeComponent();
             Con = new Functions();
             ShowEmpList();
+            GetDepartment();
         }
 
         private void ShowEmpList()
@@ -27,6 +28,14 @@ namespace Employee_Management_System
             EmpList.DataSource = Con.GetData(Query);
 
 
+        }
+
+        private void GetDepartment()
+        {
+            string Query = "Select * from DepartmentTbl";
+            DepCb.DisplayMember = Con.GetData(Query).Columns["DepName"].ToString();
+            DepCb.ValueMember = Con.GetData(Query).Columns["DepId"].ToString();
+            DepCb.DataSource = Con.GetData(Query);
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
