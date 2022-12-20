@@ -77,5 +77,25 @@ namespace Employee_Management_System
                 MessageBox.Show(Ex.Message);
             }
         }
+
+        int Key = 0;
+        private void EmpList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            EmpNameTb.Text = EmpList.SelectedRows[0].Cells[1].Value.ToString();
+            GenCb.Text = EmpList.SelectedRows[0].Cells[2].Value.ToString();
+            DepCb.SelectedValue = EmpList.SelectedRows[0].Cells[3].Value.ToString();
+            DOBTb.Text = EmpList.SelectedRows[0].Cells[4].Value.ToString();
+            JDateTb.Text = EmpList.SelectedRows[0].Cells[5].Value.ToString();
+            DailySalTb.Text = EmpList.SelectedRows[0].Cells[6].Value.ToString();
+
+            if (EmpNameTb.Text == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(EmpList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
     }
 }
