@@ -33,7 +33,7 @@ namespace Employee_Management_System
             EmpCb.ValueMember = Con.GetData(Query).Columns["EmpId"].ToString();
             EmpCb.DataSource = Con.GetData(Query);
         }
-
+        int d = 0;
         int DSal = 0;
         private void GetSalary()
         {
@@ -43,6 +43,19 @@ namespace Employee_Management_System
             {
                 DSal = Convert.ToInt32(dr["EmpSal"].ToString());
             
+            }
+            if (DaysTb.Text == "")
+            {
+                SalaryTb.Text = "Rs " + (d * DSal);
+            }
+            else if (Convert.ToInt32(DaysTb.Text) > 31)
+            {
+                MessageBox.Show("Days can not be greater than 31 days");
+            }
+            else
+            {
+                d = Convert.ToInt32(DaysTb.Text);
+                SalaryTb.Text = "Rs " + (d * DSal);
             }
            
         }
