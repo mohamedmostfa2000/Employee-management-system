@@ -12,3 +12,4 @@ C:\Users\fager\source\repos\Employee-Management-System\Employee-Management-Syste
 C:\Users\fager\source\repos\Employee-Management-System\Employee-Management-System\bin\Debug\Guna.UI2.dll
 C:\Users\fager\source\repos\Employee-Management-System\Employee-Management-System\obj\Debug\Employee-Management-System.csproj.CopyComplete
 C:\Users\fager\source\repos\Employee-Management-System\Employee-Management-System\obj\Debug\Employee_Management_System.Employee.resources
+C:\Users\fager\source\repos\Employee-Management-System\Employee-Management-System\obj\Debug\Employee_Management_System.Salary.resources

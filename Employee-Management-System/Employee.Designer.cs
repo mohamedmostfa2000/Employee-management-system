@@ -63,6 +63,7 @@ namespace Employee_Management_System
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -293,11 +294,11 @@ namespace Employee_Management_System
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(443, 290);
+            this.dataGridView1.Location = new System.Drawing.Point(440, 323);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(904, 482);
+            this.dataGridView1.Size = new System.Drawing.Size(907, 449);
             this.dataGridView1.TabIndex = 19;
             // 
             // button1
@@ -419,12 +420,24 @@ namespace Employee_Management_System
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Teal;
+            this.label19.Location = new System.Drawing.Point(830, 276);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(222, 32);
+            this.label19.TabIndex = 23;
+            this.label19.Text = "Employees List";
+            // 
             // Employee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1400, 925);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -510,5 +523,6 @@ namespace Employee_Management_System
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.Label label19;
     }
 }
