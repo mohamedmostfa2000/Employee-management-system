@@ -10,14 +10,26 @@ using System.Windows.Forms;
 
 namespace Employee_Management_System
 {
+    
     public partial class Employee : Form
     {
+        Functions Con;
         public Employee()
         {
             InitializeComponent();
+            Con = new Functions();
+            ShowEmpList();
         }
 
-        private void label15_Click(object sender, EventArgs e)
+        private void ShowEmpList()
+        {
+            string Query = "Select * from EmployeeTbl";
+            EmpList.DataSource = Con.GetData(Query);
+
+
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
         {
 
         }
