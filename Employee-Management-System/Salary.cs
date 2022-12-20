@@ -85,7 +85,8 @@ namespace Employee_Management_System
                     ShowSalaryList();
                     MessageBox.Show("Salary Paid");
                     DaysTb.Text = "";
-                   
+                    SalaryTb.Text = "";
+                    EmpCb.SelectedIndex = -1;
                     
                 }
 
@@ -93,6 +94,24 @@ namespace Employee_Management_System
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
+            }
+        }
+        int Key = 0;
+        private void SalaryList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+            EmpCb.SelectedValue = SalaryList.SelectedRows[0].Cells[1].Value.ToString();
+            DaysTb.Text = SalaryList.SelectedRows[0].Cells[2].Value.ToString();
+            SalaryTb.Text = SalaryList.SelectedRows[0].Cells[4].Value.ToString();
+
+
+            if (EmpCb.SelectedIndex == -1)
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(SalaryList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
     }
