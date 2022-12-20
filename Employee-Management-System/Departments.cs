@@ -12,16 +12,24 @@ namespace Employee_Management_System
 {
     public partial class Departments : Form
     {
-       
+        Functions Con;
         public Departments()
         {
+            Con = new Functions();
             InitializeComponent();
-            
-            
+            ShowDepartmentList();
+
+
         }
 
 
-       
+        private void ShowDepartmentList()
+        {
+            string Query = "Select * from DepartmentTbl";
+            DepList.DataSource = Con.GetData(Query);
+
+
+        }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {

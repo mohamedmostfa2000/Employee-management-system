@@ -26,18 +26,12 @@ namespace Employee_Management_System
 
         public DataTable GetData(String Query)
         {
-            try
-            {
+            
                 dt = new DataTable();
                 sda = new SqlDataAdapter(Query, Con);
                 sda.Fill(dt);
                 return dt;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.Message);
-                return null;
-            }
+           
         }
 
         public int SetData(string Query)
