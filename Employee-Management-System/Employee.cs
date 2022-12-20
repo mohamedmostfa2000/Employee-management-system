@@ -38,10 +38,7 @@ namespace Employee_Management_System
             DepCb.DataSource = Con.GetData(Query);
         }
 
-        private void EditBtn_Click(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void Addbtn_Click(object sender, EventArgs e)
         {
@@ -95,6 +92,41 @@ namespace Employee_Management_System
             else
             {
                 Key = Convert.ToInt32(EmpList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (EmpNameTb.Text == "" || DailySalTb.Text == "" || GenCb.SelectedIndex == -1 || DepCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    string Name = EmpNameTb.Text;
+                    string Gender = GenCb.SelectedItem.ToString();
+                    int Dep = Convert.ToInt32(DepCb.SelectedValue.ToString());
+                    string DOB = DOBTb.Value.Date.ToString();
+                    string JDate = JDateTb.Value.Date.ToString();
+                    int Salary = Convert.ToInt32(DailySalTb.Text);
+
+                    string Query = "Update EmployeeTbl set EmpName = '{0}',EmpGen = '{1}',EmpDep = {2},EmpDOB = '{3}',EmpJDate = '{4}',EmpSal = {5} where EmpId ={6}";
+                    Query = string.Format(Query, Name, Gender, Dep, DOB, JDate, Salary,Key);
+                    Con.SetData(Query);
+                    ShowEmpList();
+                    MessageBox.Show("Employee Updated");
+                    EmpNameTb.Text = "";
+                    DailySalTb.Text = "";
+                    GenCb.SelectedIndex = -1;
+                    DepCb.SelectedIndex = -1;
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
             }
         }
     }
