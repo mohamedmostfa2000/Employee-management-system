@@ -34,5 +34,22 @@ namespace Employee_Management_System
             EmpCb.DataSource = Con.GetData(Query);
         }
 
+        int DSal = 0;
+        private void GetSalary()
+        {
+            string Query = "Select * from EmployeeTbl where EmpId = {0} ";
+            Query = string.Format(Query, EmpCb.SelectedValue.ToString());
+            foreach (DataRow dr in Con.GetData(Query).Rows) 
+            {
+                DSal = Convert.ToInt32(dr["EmpSal"].ToString());
+            
+            }
+           
+        }
+
+        private void EmpCb_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            GetSalary();
+        }
     }
 }
