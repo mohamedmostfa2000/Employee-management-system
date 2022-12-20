@@ -114,5 +114,37 @@ namespace Employee_Management_System
                 Key = Convert.ToInt32(SalaryList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
+
+        private void EditBtn_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (DaysTb.Text == "" || PeriodTb.Text == "" || EmpCb.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    Period = PeriodTb.Value.Date.Month.ToString() + "_" + PeriodTb.Value.Date.Year.ToString();
+                    int Amount = DSal * Convert.ToInt32(DaysTb.Text);
+                    int Days = Convert.ToInt32(DaysTb.Text);
+
+                    string Query = "Update SalaryTbl set Employee = {0},Attendance = {1},Period = '{2}',Amount = {3},PayDate = '{4}' where SCode ={5}";
+                    Query = string.Format(Query, EmpCb.SelectedValue.ToString(), Days, Period, Amount, DateTime.Today.Date,Key);
+                    Con.SetData(Query);
+                    ShowSalaryList();
+                    MessageBox.Show("Salary Paying Updated");
+                    DaysTb.Text = "";
+                    SalaryTb.Text = "";
+                    EmpCb.SelectedIndex = -1;
+
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
