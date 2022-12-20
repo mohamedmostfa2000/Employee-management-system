@@ -18,7 +18,7 @@ namespace Employee_Management_System
         {
             InitializeComponent();
             Con = new Functions();
-            ShowEmpList();
+           ShowEmpList();
             GetDepartment();
         }
 

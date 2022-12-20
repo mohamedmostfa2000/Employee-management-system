@@ -18,6 +18,7 @@ namespace Employee_Management_System
             InitializeComponent();
             Con = new Functions();
             ShowSalaryList();
+            GetEmployees();
         }
 
         private void ShowSalaryList()
@@ -25,7 +26,13 @@ namespace Employee_Management_System
             string Query = "Select * from SalaryTbl";
             SalaryList.DataSource = Con.GetData(Query);
         }
-
+         private void GetEmployees()
+        {
+            string Query = "Select * from EmployeeTbl";
+            EmpCb.DisplayMember = Con.GetData(Query).Columns["EmpName"].ToString();
+            EmpCb.ValueMember = Con.GetData(Query).Columns["EmpId"].ToString();
+            EmpCb.DataSource = Con.GetData(Query);
+        }
 
     }
 }
