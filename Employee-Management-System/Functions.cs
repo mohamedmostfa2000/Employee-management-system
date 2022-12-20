@@ -10,6 +10,19 @@ namespace Employee_Management_System
 {
     class Functions
     {
-       
+        private SqlConnection Con;
+        private SqlCommand Cmd;
+        private DataTable dt;
+        private SqlDataAdapter sda;
+        private string ConStr;
+
+        public Functions()
+        {
+            ConStr = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\fager\OneDrive\المستندات\EmpDb.mdf;Integrated Security=True;Connect Timeout=30";
+            Con = new SqlConnection(ConStr);
+            Cmd = new SqlCommand();
+            Cmd.Connection = Con;
+        }
+
     }
 }
