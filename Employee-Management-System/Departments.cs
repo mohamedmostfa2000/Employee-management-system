@@ -33,7 +33,28 @@ namespace Employee_Management_System
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
-            
+            try
+            {
+                if (DepNameTb.Text == "")
+                {
+                    MessageBox.Show("Missing Data");
+                }
+                else
+                {
+                    string Dep = DepNameTb.Text;
+                    string Query = "insert into DepartmentTbl values('{0}')";
+                    Query = string.Format(Query, DepNameTb.Text);
+                    Con.SetData(Query);
+                    ShowDepartmentList();
+                    MessageBox.Show("Department Added");
+                    DepNameTb.Text = "";
+                }
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
         }
     }
 }
